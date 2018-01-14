@@ -43,7 +43,7 @@ $(document).ready(function() {
   });
   
   function navToggle() {
-    if($window.width() > 900) {
+    if($window.width() >= 1200) {
       $nav.addClass('main-nav');
       $('.mobile-nav li').css('display', 'inline-block')
       $nav.removeClass('mobile-nav');
