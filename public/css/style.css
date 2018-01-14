@@ -1,0 +1,515 @@
+/* -------------------------------------------------
+ *  BASIC SETUP
+ * -----------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.15;
+  text-rendering: optimizeLegibility;
+}
+
+/* -------------------------------------------------
+ *  REUSABLE COMPONENTS
+ * -----------------------------*/
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.row-gray {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background-color: #f7f7f7;
+}
+
+.inner-row {
+  width: 70%;
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px 0 0 0;
+}
+
+/*------ Headings ------*/
+
+h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 300%;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  word-spacing: 4px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 140%;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
+h3 {
+  margin-bottom: 40px;
+/*  color: #9b0001;*/
+  font-size: 180%;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+}
+
+h3:after {
+  display: block;
+  height: 2px;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 30px;
+/*  background-color: #9b0001;*/
+  content: " ";
+}
+
+h4 {
+  width: 85%;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  background-color: #555;
+  color: #fff;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  box-shadow: 2px 2px 2px 1px #8d8d8d;
+}
+
+/*------ PARAGRAPHS ------*/
+
+p {
+  margin-bottom: 30px;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
+/*------ Lists ------*/
+
+ul { list-style: none; }
+
+li {
+  margin-bottom: 10px;
+  padding-left: 1.3em;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
+li:before {
+  content: "\f3d1";
+  font-family: "Ionicons";
+  display: inline-block;
+  width: 1.3em;
+  margin-left: -1.3em;
+/*  color: #9b0001;*/
+  font-weight: 400;
+}
+
+/*------ Buttons ------*/
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+/*  border: 1px solid #9b0001;*/
+  border-radius: 10px;
+  font-weight: 300;
+  text-decoration: none;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+/*  background-color: #9b0001;*/
+  color: #fff;
+}
+
+/*
+.btn-full:hover,
+.btn-full:active {
+  border: 1px solid #800000;
+  background-color: #800000;
+}
+*/
+
+/*
+.btn-ghost:link,
+.btn-ghost:visited {
+  color: #9b0001;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  background-color: #9b0001;
+  color: #fff;
+}
+*/
+
+/* -------------------------------------------------
+ *  HEADER
+ * -----------------------------*/
+
+header {
+  height: 100vh;
+/*  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../assets/img/title_analytical.png");*/
+  background-size: cover;
+  background-position: center;
+}
+
+.title-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*------ Nav Menu ------*/
+
+nav {
+  transition: all 1s ease;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin: 20px 30px 0 0;
+  padding: 4px 9px 6px 9px;
+  border-radius: 10px;
+  line-height: 1.25;
+}
+
+.main-nav li:before { content: none; }
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-size: 80%;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.main-nav li:hover,
+.main-nav li:active {
+/*  background-color: rgba(155, 0, 1, 0.5);*/
+  border-radius: 10px 10px 0 0;
+}
+
+.main-nav li:first-child:hover,
+.main-nav li:first-child:active {
+  border-radius: 10px;
+}
+
+.main-nav li:hover .dropdown-content,
+.main-nav li:active .dropdown-content {
+  display: block;
+}
+
+/*------ Dropdown Menu ------*/
+
+.main-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 200px;
+  margin: 6px -9px;
+  padding: 0;
+/*  background-color: rgba(155, 0, 1, 0.5);*/
+  border-radius: 0 10px 10px 10px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.main-nav .dropdown-content a {
+  display: block;
+  min-width: 200px;
+  margin: 0;
+  padding: 10px 30px 10px 10px;
+  border-radius: none;
+}
+
+.main-nav .dropdown-content a:hover,
+.main-nav .dropdown-content a:active {
+/*  background-color: #9b0001;*/
+  border-radius: none;
+}
+
+.main-nav .dropdown-content a:first-child:hover,
+.main-nav .dropdown-content a:first-child:active {
+  border-radius: 0 10px 0 0;
+}
+
+.main-nav .dropdown-content a:last-child:hover,
+.main-nav .dropdown-content a:last-child:active {
+  border-radius: 0 0 10px 10px;
+}
+
+.main-nav .mobile-nav-icon { display: none; }
+
+/*------ Sticky Navigation ------*/
+
+.sticky {
+  position: fixed;
+  height: 55px;
+  width: 100%;
+  opacity: 0.93;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.sticky li {
+  margin: 10px 30px 10px 0;
+}
+
+.sticky li:first-child { margin-left: 20px; }
+
+/*------ Mobile Navigation ------*/
+
+.mobile-nav {
+  position: fixed;
+  height: fit-content; /*240px;*/
+  width: 100%;
+  padding-top: 10px;
+/*  background-color: #f6b333;*/
+  z-index: 2;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  transition: height 1s ease;
+}
+
+.mobile-nav ul { 
+  float: left;
+  width: 80%;
+}
+
+.mobile-nav li {
+  display: none;
+  width: 50%;
+  padding: 4px 0;
+  padding-left: 20px;
+}
+
+.mobile-nav li:before { content: none; }
+
+.mobile-nav li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.mobile-nav li:hover {
+/*  background-color: #f5a30a;*/
+}
+
+.mobile-nav li:hover .dropdown-content {
+  display: block;
+/*  background-color: #f5a30a;*/
+}
+
+.mobile-nav .dropdown-content {
+  position: absolute;
+  display: none;
+  top: 5px;
+  left: 30%;
+  height: fit-content;
+  width: 30%;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.mobile-nav .dropdown-items a {
+  display: block;
+  padding: 3px 5px;
+}
+
+.mobile-nav .dropdown-content .dropdown-items a:hover,
+.mobile-nav .dropdown-content .dropdown-items a:active {
+/*  background-color: #f6b333;*/
+}
+
+.mobile-nav-icon {
+  float: right;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.mobile-nav-icon i {
+  margin-right: 20px;
+  color: #fff;
+  font-size: 150%;
+}
+
+/* -------------------------------------------------
+ *  SECTION PERSONAL BRAND
+ * -----------------------------*/
+
+.adjectives li {
+  position: relative;
+  left: 80%;
+}
+
+/* -------------------------------------------------
+ *  SECTION PERFORMANCE INTRO
+ * -----------------------------*/
+
+/* -------------------------------------------------
+ *  SECTION PERFORMANCE 
+ * -----------------------------*/
+
+.performance {
+  margin-bottom: 30px;
+}
+
+.performance img {
+  position: relative;
+  height: 250px;
+  width: auto;
+  margin-top: 30px;
+  z-index: -1;
+}
+
+.performance li {
+  padding-right: 15px;
+  font-size: 90%;
+}
+
+/*
+.positive h4 {
+  background-color: #9b0001;
+}
+*/
+
+/*
+.positive .sub-title {
+  color: #9b0001;
+}
+*/
+
+.sub-title {
+  font-size: 120%;
+  font-weight: 400;
+}
+
+.performance p {
+  margin-bottom: 8px;
+  font-size: 90%;
+}
+
+.gray li:before {
+  color: #555;
+}
+
+/* -------------------------------------------------
+ *  SECTION QUOTE BANNER
+ * -----------------------------*/
+
+.section-quote {
+  height: 40vh;
+  width: 100%;
+  margin-top: 80px;
+  padding: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), 
+    url("../assets/img/_Strengths/strength_banner_fists.png");
+  background-size: cover;
+  background-position: center;
+}
+
+blockquote {
+  position: relative;
+  width: fit-content;
+  max-width: 900px;
+  margin: 3% auto;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+blockquote h2 {
+  width: fit-content;
+  font-size: 180%;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+
+blockquote:before {
+  content: "\201C";
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: -35px;
+  color: #fff;
+  font-size: 500%;
+  font-weight: 300;
+}
+
+cite {
+  position: relative;
+  left: 50%;
+  color: #c1c1c1;
+}
+
+/* -------------------------------------------------
+ *  FOOTER
+ * -----------------------------*/
+
+.footer {
+  height: 10vh;
+  width: 100%;
+  margin-top: 60px;
+  padding-top: 10px;
+  background-color: #fff;
+/*  border-top: 3px solid #9b0001;*/
+}
+
+.footer .row {
+  position: relative;
+  left: 3%;
+}
+
+.footer img {
+  height: 50px;
+  width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+
+/*------ Screens with max-width 1300px ------*/
+@media only screen and (max-width: 1300px) {
+  .title-text-box { width: 900px; }
+}
+
+/*------ Screens with max-width 990px ------*/
+@media only screen and (max-width: 990px) {
+  h3 { font-size: 140%; }
+  h4 { width: 100%; }
+  .row { max-width: 700px; }
+  .title-text-box { width: 500px; }
+  .span-1-of-6 { text-align: center; }
+  .adjectives li { left: 15%; }
+  .span-1-of-4 { width: 32.2%; }
+  .footer .span-1-of-4 { width: 22.2%; }
+  
+  blockquote { 
+    width: 95%; 
+    margin: 0 auto;
+  }
+  
+  .footer .row {
+    max-width: 95%;
+    text-align: center;
+  }
+  
+  .span-1-of-6,
+  .span-2-of-6,
+  .span-3-of-6 { 
+    width: 100%;
+    margin: 1%;
+  }
+}
+
+/*------ Screens with max-width 870px ------*/
+@media only screen and (max-width: 870px) {
+  .footer .row { max-width: 80%; }
+  .footer .span-1-of-4 {
+    position: relative;
+    left: 8%;
+    width: 39.5%; 
+  }
+}
+
+/*------ Screens with max-width 800px ------*/
+@media only screen and (max-width: 800px) {
+  .row { max-width: 500px; }
+  cite { left: 33%; }
+}
+
+/*------ Screens with max-width 600px ------*/
+@media only screen and (max-width: 600px) {
+  .footer .row,
+  .footer .span-1-of-4 {
+    width: 98%;
+    margin: 1%;
+  }
+  .footer img {
+    height: auto;
+    width: 80%;
+  }
+}
+
+/*------ Screens with max-width 550px ------*/
+@media only screen and (max-width: 550px) {
+  html { font-size: 16px; }
+  .title-text-box { width: 95%; }
+  .row { width: 95%; } 
+  .long-copy { width: 100%; }
+  .inner-row { width: 90%; }
+}
+
+/*------ Screens with max-width 440px ------*/
+@media only screen and (max-width: 460px) {
+  h2 { font-size: 120%; }
+  h3 { font-size: 110%; }
+  .adjectives li { left: 28%; }
+  .span-1-of-4 { width: 100%; }
+  
+  h1 { 
+    margin-bottom: 10px;
+    font-size: 200%;
+  }
+  
+  blockquote h2 {
+    width: 300px;
+    margin: 20px auto;
+    font-size: 140%;
+    word-spacing: 2px;
+  }
+  
+  cite {
+    left: 10%;
+    width: 300px;
+    margin: 0 auto;
+  }
+}

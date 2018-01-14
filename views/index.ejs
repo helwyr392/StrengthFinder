@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="US-en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/grid.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/queries.css">
+    <link rel="stylesheet" href="vendors/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400">
+    <title>Strength Finder | <%= strength.title %></title>
+    <style>
+      h3, li:before, .positive .sub-title { color: <%= strength.color %>; }
+      h3:after, .btn-full:link, .btn-full:visited, .main-nav .dropdown-content a:hover, .main-nav .dropdown-content a:active, .positive h4,
+      .sticky, .sticky .dropdown-content a:hover, .sticky .dropdown-content a:active,
+      .mobile-nav, .mobile-nav .dropdown-content .dropdown-items a:hover,
+      .mobile-nav .dropdown-content .dropdown-items a:active { background-color: <%= strength.color %>; }
+      .main-nav li:hover, .main-nav li:active, .main-nav .dropdown-content { background-color: <%= strength.colorRGBA %>; }
+      .btn:link, .btn:visited { border: 1px solid <%= strength.color %> }
+      .footer { border-top: 3px solid <%= strength.color %>; }
+      .sticky .dropdown-content, .sticky li:hover, .sticky li:active, .mobile-nav li:hover,
+      .mobile-nav li:hover .dropdown-content, .mobile-nav .dropdown-content a:hover,
+      .mobile-nav .dropdown-content a:active { background-color: <%= strength.colorHover %> }
+      .btn-full:hover, .btn-full:active {
+        border: 1px solid <%= strength.colorHover %>;
+        background-color: <%= strength.colorHover %>;
+      }
+      header {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), 
+                          url(<%= strength.imgUrl %>);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+     <nav class="main-nav">
+       <!-- Widescreen Navigation -->
+       <!-- <ul class="main-nav"> -->
+       <ul>
+         <li><a href="#">Home</a></li>
+         <li>
+           <a href="#">Strategic Thinking</a>
+           <div class="dropdown-content">
+             <ul class="dropdown-items">
+               <a href="Analytical">Analytical</a>
+               <a href="Context">Context</a>
+               <a href="Futuristic">Futuristic</a>
+               <a href="Ideation">Ideation</a>
+               <a href="Input">Input</a>
+               <a href="Intellection">Intellection</a>
+               <a href="Learner">Learner</a>
+               <a href="Strategic">Strategic</a>
+             </ul>
+           </div>
+         </li>
+         <li>
+           <a href="#">Executing</a>
+           <div class="dropdown-content">
+             <ul class="dropdown-items">
+               <a href="Achiever">Achiever</a>
+               <a href="Arranger">Arranger</a>
+               <a href="Belief">Belief</a>
+               <a href="Consistency">Consistency</a>
+               <a href="Deliberative">Deliberative</a>
+               <a href="Discipline">Discipline</a>
+               <a href="Focus">Focus</a>
+               <a href="Responsibility">Responsibility</a>
+               <a href="Restorative">Restorative</a>
+             </ul>
+           </div>
+         </li>
+         <li>
+           <a href="#">Influencing</a>
+           <div class="dropdown-content">
+             <ul class="dropdown-items">
+               <a href="Activator">Activator</a>
+               <a href="Command">Command</a>
+               <a href="Communication">Communication</a>
+               <a href="Competition">Competition</a>
+               <a href="Maximizer">Maximizer</a>
+               <a href="Self-Assurance">Self-Assurance</a>
+               <a href="Significance">Significance</a>
+               <a href="Woo">Woo</a>
+             </ul>
+           </div>
+         </li>
+         <li>
+           <a href="#">Relationship Building</a>
+           <div class="dropdown-content">
+             <ul class="dropdown-items">
+               <a href="Adaptability">Adaptability</a>
+               <a href="Connectedness">Connectedness</a>
+               <a href="Developer">Developer</a>
+               <a href="Empathy">Empathy</a>
+               <a href="Harmony">Harmony</a>
+               <a href="Includer">Includer</a>
+               <a href="Individualization">Individualization</a>
+               <a href="Positivity">Positivity</a>
+               <a href="Relator">Relator</a>
+             </ul>
+           </div>
+         </li>
+       </ul>
+       <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+     </nav>
+      <div class="title-text-box">
+        <h1><%= strength.title %></h1>
+        <h2><%= strength.subtitle %></h2>
+        <a class="btn btn-full js--scroll-down" href="#">Learn more</a>
+      </div>
+    </header>
+    
+    <section class="section-personal-brand js--section-personal-brand">
+      <div class="row">
+        <h3>Personal Brand &mdash; How <%= strength.title %> Operates At Work</h3>
+        <div class="inner-row">
+          <p class="long-copy">
+            Most people have a good handle on "What" they bring to the workplace. Resumes, CVs, and career development conversations are filled with lists of skills and job titles that show "what" you can do. Nearly everyone misses the "How".
+          </p>
+          <p class="long-copy">
+            Your Clifton StrengthsFinder talent themes help you communicate "How" you show up. It's how you think. It's how you feel. It's how you act. These are huge differences in each person that are differentiators on the job. Consider these adjectives you might want to consciously put into your personal branding efforts.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+       
+        <% var adjectives = strength.adjectives.split("~~"); %>
+       
+        <ul class="col span-1-of-4 adjectives">
+          <% for (var i = 0; i < 4; i++) { %>
+            <li><%= adjectives[i] %></li>
+          <% } %>
+        </ul>
+        <ul class="col span-1-of-4 adjectives">
+          <% for (var i = 4; i < 8; i++) { %>
+            <li><%= adjectives[i] %></li>
+          <% } %>
+        </ul>
+        <ul class="col span-1-of-4 adjectives">
+          <% for (var i = 8; i < adjectives.length; i++) { %>
+            <li><%= adjectives[i] %></li>
+          <% } %>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="section-performance js--performance">
+      <div class="row-gray">
+        <div class="row">
+          <h3>Your Strengths Will Strengthen Your Performance At Work</h3>
+          <div class="inner-row">
+            <p class="long-copy">
+              In the next section, you'll explore what fuels you up and what drains you. Just like gas (or petrol) in your car, you need to keep your personal tank full to be at your best. Each StrengthsFinder talent theme is energized and drained by different things. When you see the stick figure who looks strong, you can consider how these things fuel you up at work. They're your energy makers. When you see the stick figure who looks weak, consider if these things are draining you at work. They're your energy takers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+     
+    <section id="performance" class="section-performance">
+      
+      <!-- Yucks & Yays -->
+      <div class="row performance">
+        <div class="col span-1-of-6">
+          <img src="assets/img/_Strengths/strength_yuck.png" alt="Analytical Yuck">
+        </div>
+        <div class="col span-2-of-6">
+          <h4><%= strength.title %> Yucks</h4>
+          <p class="sub-title">What's a Yuck?</p>
+          <p>
+            It's a situation, condition, or behavior you might see at work that zaps your energy. Yucks are also things you see on your calendar or to do list that make you think, "yuck, if I never had to do that again I'd be thrilled."
+          </p>
+        </div>
+        <div class="col span-1-of-6">
+          <img src="assets/img/_Strengths/strength_yay.png" alt="Analytical Yay">
+        </div>
+        <div class="col span-2-of-6 positive">
+          <h4><%= strength.title %> Yays</h4>
+          <p class="sub-title">What's a Yay?</p>
+          <p>
+            It's a situation at work that boosts up your energy or makes you feel productive. Yays are also things you see on your calendar or to do list that make you think, “yay, fill my days with this."
+          </p>
+        </div>
+      </div>
+      <!-- Yuck & Yay situations -->
+      
+      <% var yucks = strength.yuck.split("~~"); %>
+      <% var yays = strength.yay.split("~~"); %>
+      
+      <div class="row performance">
+        <div class="col span-3-of-6">
+          <h4>Yuck Situations for <%= strength.title %></h4>
+          <ul class="gray">
+            <% for (var i = 0; i < yucks.length; i++) { %>
+              <li><%= yucks[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="col span-3-of-6 positive">
+          <h4>Yay Situations for <%= strength.title %></h4>
+          <ul>
+            <% for (var i = 0; i < yays.length; i++) { %>
+              <li><%= yays[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Starved & Fed -->
+      <div class="row performance">
+        <div class="col span-1-of-6">
+          <img src="assets/img/_Strengths/strength_starved.png" alt="Analytical Starved">
+        </div>
+        <div class="col span-2-of-6">
+          <h4><%= strength.title %> When Starved</h4>
+          <p class="sub-title">What's a Starved Talent?</p>
+          <p>
+            This section describes how you might be perceived when the shadow side of your talent is showing. It’s when you’re overusing, misapplying, or squashing down one of your natural talents rather than investing in it to turn it into a strength. We often see people starve, squash, or ignore their talent when they assume it is not valued in that role or company culture. 
+          </p>
+        </div>
+        <div class="col span-1-of-6">
+          <img src="assets/img/_Strengths/strength_fed.png" alt="Analytical Fed">
+        </div>
+        <div class="col span-2-of-6 positive">
+          <h4><%= strength.title %> When Fed</h4>
+          <p class="sub-title">What's a Fed Talent?</p>
+          <p>
+            This section describes how you might be perceived when the best version of you shows up at work. It’s when you’ve invested in your natural talents to mature them into strengths. You can feed your talent by considering “how” you approach each “what” on the job. When you apply your talents to productive outcomes, you’re feeding them.
+          </p>
+        </div>
+      </div>
+      <!-- Starved & Fed perceptions -->
+      
+      <% var starved = strength.starved.split("~~"); %>
+      <% var fed = strength.fed.split("~~"); %>
+      
+      <div class="row performance">
+        <div class="col span-3-of-6">
+          <h4>Perceptions of Starved <%= strength.title %></h4>
+          <ul class="gray">
+            <% for (var i = 0; i < starved.length; i++) { %>
+              <li><%= starved[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="col span-3-of-6 positive">
+          <h4>Perceptions of Fed <%= strength.title %></h4>
+          <ul>
+            <ul class="gray">
+              <% for (var i = 0; i < fed.length; i++) { %>
+                <li><%= fed[i] %></li>
+              <% } %>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Insult & Honor -->
+      <div class="row performance js--performance-last-child">
+        <div class="col span-1-of-6">
+          <img src="assets/img/_Strengths/strength_insulted.png" alt="Analytical Insulted">
+        </div>
+        <div class="col span-2-of-6">
+          <h4><%= strength.title %><br>&mdash; How to Insult It</h4>
+          <p class="sub-title">What's an Insulted Talent?</p>
+          <p>
+            Usually talents get offended or insulted by other people who have natural preferences that are different from yours. It also happens if they fail to see their actions have an impact on someone else (you!). You can also insult your own talents if you have a "troublemaker strength" that speaks loudly and overpowers this one.
+          </p>
+        </div>
+        <div class="col span-1-of-6">
+          <img src="assets/img/_Strengths/strength_honor.png" alt="Analytical Honored">
+        </div>
+        <div class="col span-2-of-6 positive">
+          <h4><%= strength.title %><br>&mdash; How to Honor It</h4>
+          <p class="sub-title">What's an Honored Talent?</p>
+          <p>
+            Usually talents feel honored when other people acknowledge your needs and potential contributions. Talents feel honored when someone “extends an olive branch” to help you work at your best. You can also honor your own talents by investing in them, by choosing work that naturally calls on them, or by applying your strengths to performance on the job. 
+          </p>
+        </div>
+      </div>
+      <!-- Insulted & Honor things -->
+      
+      <% var insulted = strength.insulted.split("~~"); %>
+      <% var honored = strength.honored.split("~~"); %>
+      
+      <div class="row performance">
+        <div class="col span-3-of-6">
+          <h4>Things That Will Insult <%= strength.title %></h4>
+          <ul class="gray">
+            <% for (var i = 0; i < insulted.length; i++) { %>
+              <li><%= insulted[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="col span-3-of-6 positive">
+          <h4>Things That Will Honor <%= strength.title %></h4>
+          <ul>
+            <% for (var i = 0; i < honored.length; i++) { %>
+              <li><%= honored[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Quote banner -->
+    
+    <% var quote = strength.quote; %>
+    
+    <section class="section-quote">
+      <blockquote>
+        <h2><%= quote %></h2>
+        <cite>&mdash; <%= strength.cite %></cite>
+      </blockquote>
+    </section>
+    
+    <!-- Invest on the job -->
+    
+    <% var invest = strength.working.split("~~"); %>
+    
+    <section class="section-invest-on-the-job">
+      <div class="row">
+        <h3>How To Invest In Your <%= strength.title %> Talent On The Job</h3>
+        <div class="inner-row">
+          <ul>
+            <% for (var i = 0; i < invest.length; i++) { %>
+              <li><%= invest[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tips for Managing -->
+    
+    <% var manage = strength.managing.split("~~"); %>
+    
+    <section class="section-tips-for-managing">
+      <div class="row-gray">
+        <div class="row">
+        <h3>Tips For Managing Someone Who Leads <br>Through The <%= strength.title %> Talent</h3>
+        <div class="inner-row">
+          <ul>
+            <% for (var i = 0; i < manage.length; i++) { %>
+              <li><%= manage[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </section>
+    
+    <!-- Consider when partnering -->
+    
+    <% var partner = strength.partnering.split("~~"); %>
+    
+    <section class="section-when-partnering">
+      <div class="row">
+        <h3>What To Consider When Partnering With A Colleague <br>Who Leads Through The <%= strength.title %> Talent</h3>
+        <div class="inner-row">
+          <ul>
+            <% for (var i = 0; i < partner.length; i++) { %>
+              <li><%= partner[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="row">
+        <div class="col span-1-of-4">
+          <a href="#"><img src="assets/img/logo.png" alt="Yeo & Yeo logo"></a>
+        </div>
+        <div class="col span-1-of-4">
+          <a href="#"><img src="assets/img/logo_yycc.png" alt="Yeo & Yeo Computer Consulting"></a>
+        </div>
+        <div class="col span-1-of-4">
+          <a href="#"><img src="assets/img/logo_yyfs.png" alt="Yeo & Yeo Financial Services"></a>
+        </div>
+        <div class="col span-1-of-4">
+          <a href="#"><img src="assets/img/logo_yymb.png" alt="Yeo & Yeo Medical Billing"></a>
+        </div>
+      </div>
+    </footer>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  <script src="scripts/scripts.js"></script>
+  </body>
+</html>

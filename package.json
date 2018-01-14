@@ -1,0 +1,24 @@
+{
+  "name": "strengthfinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helwyr392/StrengthFinder.git"
+  },
+  "author": "John Snable",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helwyr392/StrengthFinder/issues"
+  },
+  "homepage": "https://github.com/helwyr392/StrengthFinder#readme",
+  "devDependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.9"
+  }
+}
