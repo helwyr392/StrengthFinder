@@ -1,1 +1,3 @@
-# StrengthFinder
+##### StrengthFinder
+
+A one page Node.js application highlighting the information for the 34 individual strengths in the "Gallup StrengthFinder" series. The app was written with the Express.js framework, and utilizes MongoDB for persistent data storage. When a user selects a particular strength from one of the dropdown menus, the information and color scheme for that particular strength is pulled from the database, and the information is plugged in to the various EJS tags inside the HTML code.
