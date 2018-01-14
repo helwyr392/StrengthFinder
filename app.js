@@ -1,8 +1,7 @@
 // Requires and Uses
 const express    = require('express'),
       app        = express(),
-      mongoose   = require('mongoose'),
-      port       = process.env.port || 8080;
+      mongoose   = require('mongoose');
 
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
@@ -58,6 +57,6 @@ app.get('/:id', (req, res) => {
   });
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log('Server is running... Port:8080');
 });
