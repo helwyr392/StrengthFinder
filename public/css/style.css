@@ -175,6 +175,7 @@ header {
 /*  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../assets/img/title_analytical.png");*/
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .title-text-box {
@@ -438,6 +439,7 @@ nav {
     url("../assets/img/_Strengths/strength_banner_fists.png");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 blockquote {
